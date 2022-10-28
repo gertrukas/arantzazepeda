@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="/">
+    <img src="assets/images/valter-kuhne.png" class="w-100 " alt="Valter Kühne">
+  </a>
+
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse " [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="/molecular">Medicina Molecular</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/semblanza">Semblanza</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/testimoniales">Testimoniales</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contacto</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--
+<div class="navbar-primaryL -err">
+
+  <ul class="list-navbar-primaryL d-flex  -err">
+
+    <li class="items-navbarL box-logo -err">
+      <a routerLink="/">
+        <img src="assets/images/valter-kuhne.png" class="w-100 " alt="Valter Kühne">
+      </a>
+    </li>
+
+    <li class="items-navbarL item-right -err">
+
+      <a (click)="openMenu()" class="cursor" [class.hidden]="displayMenu">
+        <i class="pi pi-bars" *ngIf="!open"></i>
+        <i class="pi pi-times" *ngIf="open"></i>
+      </a>
+
+      <ul  [class.show]="open" class="-mnu-links">
+        <li routerLink="/molecular" (click)="!displayMenu ? openMenu(): ''" class="cursor -err">
+          <a>
+            Medicina Molecular
+          </a>
+        </li>
+        <li routerLink="/semblanza" (click)="!displayMenu ? openMenu(): ''" class="cursor">
+          <a>
+            Semblanza
+          </a>
+        </li>
+        <li routerLink="/testimoniales" (click)="!displayMenu ? openMenu(): ''" class="cursor">
+          <a>
+            Testimoniales
+          </a>
+        </li>
+        <li routerLink="/contacto" (click)="!displayMenu ? openMenu(): ''" class="cursor">
+          <a>
+            Contacto
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+-->
+

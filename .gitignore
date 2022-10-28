@@ -1,0 +1,14 @@
+.idea
+
+/api/.idea
+/api/node_modules
+/api/.env
+
+
+/admin/.idea
+/admin/node_modules
+
+/site/.idea
+/site/.angular
+/site/.vscode
+/site/node_modules
