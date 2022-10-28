@@ -6,9 +6,9 @@ export const environment = {
   production: false,
   appVersion: 'v1.0.1',
   USERDATA_KEY: 'authexcess2022',
-  apiUrl: 'http://localhost:8080/api',
-  adminUrl: 'http://localhost:4200/',
-  pageUrl: 'http://localhost:4200/',
+  apiUrl: 'https://backend.valterkuhne.com/api',
+  adminUrl: 'https://admin.valterkuhne.com/',
+  pageUrl: 'https://valterkuhne.com/',
 };
 
 /*

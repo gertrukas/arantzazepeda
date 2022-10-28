@@ -5,22 +5,28 @@ import { FooterComponent } from './footer/footer.component';
 import {RouterModule} from "@angular/router";
 import { AnimationsComponent } from './animations/animations.component';
 
+import { News4Component } from './news4/news4.component';
+
+import { PipesModule} from "../pipes/pipes.module";
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    AnimationsComponent
+    AnimationsComponent,
+    News4Component
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
-    AnimationsComponent
+    AnimationsComponent,
+    News4Component
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    PipesModule
   ]
 })
 export class ComponentsModule { }

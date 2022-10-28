@@ -6,6 +6,8 @@ import { MainComponent } from './main.component';
 import {ComponentsModule} from "../../../components/components.module";
 
 
+
+
 @NgModule({
   declarations: [
     MainComponent
@@ -13,7 +15,8 @@ import {ComponentsModule} from "../../../components/components.module";
   imports: [
     CommonModule,
     MainRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+
   ]
 })
 export class MainModule { }

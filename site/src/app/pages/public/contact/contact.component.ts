@@ -38,8 +38,12 @@ export class ContactComponent implements OnInit {
     if (this.verify) {
 
       let params = new FormData();
-
+//Return-Path:
       params.append('Content-Type', 'multipart/form-data');
+      params.append('Return-Path', this.contactForm.value.correo);
+      params.append('Reply-To', this.contactForm.value.correo);
+      params.append('Subject', this.contactForm.value.nombre + 'te mando un mensaje');
+
       params.append('name', this.contactForm.value.nombre);
       params.append('email', this.contactForm.value.correo);
       params.append('telephone', this.contactForm.value.telefono);

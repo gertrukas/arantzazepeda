@@ -27,9 +27,13 @@ const routes: Routes = [
         loadChildren: () => import('./testimoniales/testimoniales.module').then(m => m.TestimonialesModule),
         title: "Valter Kühne / Testimoniales"
       },
-      { 
-        path: 'blog', 
-        loadChildren: () => import('./news/news.module').then(m => m.NewsModule) 
+      {
+        path: 'blog',
+        loadChildren: () => import('./news/news.module').then(m => m.NewsModule)
+      },
+      {
+        path: 'blog/:blog',
+        loadChildren: () => import('./new/new.module').then(m => m.NewModule)
       },
       {
         path: 'contact',

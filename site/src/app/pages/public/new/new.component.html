@@ -1,0 +1,38 @@
+
+
+
+
+<div class="-breadcrumb">
+  <a href="/">Inicio</a>
+  / <a href="/blog">Comunicados</a> / {{ blog.name }}
+</div>
+
+
+<div class="container -detalle-comunicado">
+  <div class="row">
+    <h1>{{ blog.name }}</h1>
+    <div [innerHTML]="blog.date | date: 'mediumDate'" class="-nombre" ></div>
+  </div>
+
+  <div class="row">
+    <div class="column-12 col-md-12">
+      <img [src]="blog._id | image: 'news'"  [alt]="blog.name"  class="img-fluid" width="50%">
+      <div [innerHTML]="blog.description" class="-introd" ></div>
+    </div>
+
+    <div class="column-7 col-md-7">
+
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+

@@ -1,3 +1,33 @@
-<div *ngFor="let blog of blogs">
-    {{ blog | json }}
+
+
+<div class="-breadcrumb">
+  <a href="/">Inicio</a>
+  / Comunicados
 </div>
+
+
+<div class="container">
+  <h1>Comunicados</h1>
+
+
+  <div class="row">
+    <div class="-galeria">
+
+        <div *ngFor="let blog of blogs " class="-tarjeta" >
+
+            <div>
+              <img [src]="blog._id | image: 'news'"  class=""  [alt]="blog.name">
+            </div>
+            <div>
+              <p class="-titulo">{{ blog.name }}</p>
+              <div [innerHTML]="blog.intro | truncate: 120" class="-intro" ></div>
+            </div>
+
+            <a [routerLink]="['/blog', blog.slug]" class="-btn ng-tns-c28-0"> ver mas</a>
+
+        </div>
+
+    </div>
+  </div>
+</div>
+
