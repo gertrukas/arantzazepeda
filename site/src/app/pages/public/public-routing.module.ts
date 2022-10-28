@@ -10,22 +10,7 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () => import('./main/main.module').then(m => m.MainModule),
-        title: "Valter Kühne"
-      },
-      {
-        path: 'molecular',
-        loadChildren: () => import('./molecular/molecular.module').then(m => m.MolecularModule),
-        title: "Valter Kühne / Medicina Molecular"
-      },
-      {
-        path: 'semblanza',
-        loadChildren: () => import('./semblanza/semblanza.module').then(m => m.SemblanzaModule),
-        title: "Valter Kühne / Semblanza"
-      },
-      {
-        path: 'testimoniales',
-        loadChildren: () => import('./testimoniales/testimoniales.module').then(m => m.TestimonialesModule),
-        title: "Valter Kühne / Testimoniales"
+        title: "Arantza Zepeda"
       },
       {
         path: 'blog',
@@ -36,9 +21,9 @@ const routes: Routes = [
         loadChildren: () => import('./new/new.module').then(m => m.NewModule)
       },
       {
-        path: 'contact',
+        path: 'contacto',
         loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule),
-        title: "Valter Kühne / Contacto"
+        title: "Arantza Zepeda / Contacto"
       },
     ]
   },
