@@ -58,6 +58,7 @@ const blogPost = async (req = request, res = response) => {
 
     let { name, description, intro, date } = req.body;
     let image;
+    let slug = urlSlug(name);
     let images = [];
     if(req.files){
         if(req.files.file){
@@ -74,7 +75,7 @@ const blogPost = async (req = request, res = response) => {
         }
     }
     let data;
-    data = {name, description, intro, date};
+    data = {name, description, intro, date, slug};
     data.image = image;
     let blog = new Blog(data);
 
@@ -117,9 +118,10 @@ const blogPut = async ( req = request, res = response) => {
     const id = req.params.id;
     let { name, description, intro, date } = req.body;
     let image;
+    let slug = urlSlug(name);
     let images;
     let blog;
-    let data = {name, description, intro, date};
+    let data = {name, description, intro, date, slug};
     if(req.files){
         if(req.files.file) {
             image = await fileUploadHelper(req.files, undefined, 'news');
