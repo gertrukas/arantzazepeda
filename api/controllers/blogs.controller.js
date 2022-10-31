@@ -6,15 +6,17 @@ const { filesUpload: filesUploadHelper } = require("../helpers");
 
 const blogsGetPublic = async (req, res = response) => {
 
-    const [ totalBlogs, blogs, blogsAll] = await Promise.all([
+    const [ totalBlogs, blogs, blogsLimit, blogsAll] = await Promise.all([
         Blog.countDocuments({delete:false, active:true}),
-        Blog.find({delete:false, active:true}),
-        Blog.find({delete:false, active:true})
+        Blog.find({delete:false, active:true}).sort({date: 1}),
+        Blog.find({delete:false, active:true}).sort({date: 1}).limit(3),
+        Blog.find({delete:false, active:true}).sort({date: 1})
     ]);
 
     res.json({
         totalBlogs,
         blogs,
+        blogsLimit,
         blogsAll
     });
 };
