@@ -20,11 +20,11 @@
           </div>
           <div>
             <p class="-titulo">{{ blog.name }}</p>
-            <div [innerHTML]="blog.intro | truncate: 120" class="-intro" ></div>
+            <div [innerHTML]="blog.intro | truncate: 200" class="-intro" ></div>
           </div>
 
           <div class="">
-            <a [routerLink]="['/blog', blog.slug]" class="-btn-ver-mas float-end"> ver mas</a>
+            <a [routerLink]="['/blog', blog.slug]" class="-btn-ver-mas float-end">ver mas</a>
           </div>
 
         </div>
