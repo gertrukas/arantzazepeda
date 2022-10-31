@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import { NewsService } from "../../../services/news.service";
-import {ActivatedRoute} from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
+
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-new',
@@ -10,12 +12,19 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class NewComponent implements OnInit {
 
+
+
   blog: any;
 
   constructor(private service: NewsService,
-              private activateRouter: ActivatedRoute) {
-    this.activateRouter.params.subscribe( params => {
+              private activateRouter: ActivatedRoute,
+              private titleService: Title
+  ) {
+
+
+      this.activateRouter.params.subscribe( params => {
       this.getData(params['blog']);
+
     });
   }
 
@@ -26,6 +35,7 @@ export class NewComponent implements OnInit {
   getData(slug: string) {
     this.service.getNewsD(slug).subscribe(response => {
       this.blog = response.blog;
+      this.titleService.setTitle('Arantza Zepeda / comunicado / ' + this.blog.name);
       }, error => {
         console.log(error);
         Swal.fire({
@@ -35,6 +45,7 @@ export class NewComponent implements OnInit {
           timer: 2000
         });
       });
+
   }
 
 }

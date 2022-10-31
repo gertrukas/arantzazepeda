@@ -14,11 +14,13 @@ const routes: Routes = [
       },
       {
         path: 'blog',
-        loadChildren: () => import('./news/news.module').then(m => m.NewsModule)
+        loadChildren: () => import('./news/news.module').then(m => m.NewsModule),
+        title: "Arantza Zepeda / Comunicados"
       },
       {
         path: 'blog/:blog',
-        loadChildren: () => import('./new/new.module').then(m => m.NewModule)
+        loadChildren: () => import('./new/new.module').then(m => m.NewModule),
+        title: "Arantza Zepeda / Comunicado"
       },
       {
         path: 'contacto',
