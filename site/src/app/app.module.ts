@@ -12,6 +12,9 @@ import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeEs, 'es');
 
+import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +26,9 @@ registerLocaleData(localeEs, 'es');
     BrowserAnimationsModule,
     SweetAlert2Module.forRoot(),
     HttpClientModule,
+    NgxGoogleAnalyticsModule.forRoot('G-R2YV2SJ8RJ'),
+    NgxGoogleAnalyticsRouterModule
+
 
   ],
 
