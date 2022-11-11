@@ -3,6 +3,7 @@ import { NewsService } from 'src/app/services/news.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 
+
 @Component({
   selector: 'app-news4',
   templateUrl: './news4.component.html',
@@ -10,6 +11,8 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 })
 
 export class News4Component implements OnInit {
+
+
 
   blogs: any[]= [];
 

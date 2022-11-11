@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 
-import { Title } from '@angular/platform-browser';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +10,18 @@ import { Title } from '@angular/platform-browser';
 })
 export class AppComponent {
 
+  fbImage = "https://arantzazepeda.com/assets/images/arantza-zepeda.jpeg";
 
   constructor(
       private primengConfig: PrimeNGConfig,
-      private titleService: Title
+      private metaService: Meta
       ) {
-      titleService.setTitle('bienvenido');
+
+
+    this.metaService.updateTag({ property: 'og:url', content: 'https://arantzazepeda.com' });
+      this.metaService.updateTag({ property: 'og:title', content: 'Arantza Zepeda'});
+      this.metaService.updateTag({ property: 'og:description', content: 'Arantza Zepeda Golf'});
+      this.metaService.updateTag({ property: 'og:image', content: this.fbImage});
   }
 
   ngOnInit() {

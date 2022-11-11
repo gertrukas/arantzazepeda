@@ -1,36 +1,36 @@
 
 
 <div class="-breadcrumb">
-  <a href="/">Inicio</a>
+  <a routerLink="/">Inicio</a>
   / Comunicados
 </div>
 
+<div class="p-2">
+  <h1>Comunicados</h1>
+  <div class="-col-n p-1">
 
-<h1>Comunicados</h1>
-<div class="-col-n p-1">
+    <div class="-galeria">
 
-  <div class="-galeria">
+      <div *ngFor="let blog of blogs " class="-tarjeta" >
 
-    <div *ngFor="let blog of blogs " class="-tarjeta" >
+        <div>
+          <img [src]="blog._id | image: 'news'"  class=""  [alt]="blog.name">
+        </div>
+        <div>
+          <p class="-titulo">{{ blog.name }}</p>
+          <div [innerHTML]="blog.intro | truncate: 200" class="-intro" ></div>
+        </div>
 
-      <div>
-        <img [src]="blog._id | image: 'news'"  class=""  [alt]="blog.name">
-      </div>
-      <div>
-        <p class="-titulo">{{ blog.name }}</p>
-        <div [innerHTML]="blog.intro | truncate: 200" class="-intro" ></div>
-      </div>
+        <div class="">
+          <a [routerLink]="['/blog', blog.slug]" class="-btn-ver-mas float-end"> ver mas</a>
+        </div>
 
-      <div class="">
-        <a [routerLink]="['/blog', blog.slug]" class="-btn-ver-mas float-end"> ver mas</a>
       </div>
 
     </div>
 
   </div>
-
 </div>
-
 
 
 

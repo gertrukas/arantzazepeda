@@ -152,11 +152,22 @@ a.-btn:hover
   gap: 0.7rem
   grid-auto-rows: auto
   padding: 6px 0 6px 0
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr))
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr))
+
+.-col-4
+  display: grid
+  gap: 0.7rem
+  padding: 8px
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr))
+
+.-comunicados
+    padding: 18px
 
 .-tarjeta
   border: 1px solid $-color30
-  padding: 4px
+  border-radius: 15px
+  overflow: hidden
+  padding: 0px
 
 .-tarjeta img
   width: 100% /* width of container */
@@ -166,11 +177,14 @@ a.-btn:hover
 .-tarjeta .-titulo
   font-weight: bold
   font-size: 1.2rem
+  padding: 0 0 0 6px
   margin-bottom: 0
 
 .-tarjeta .-intro
   font-size: 0.9rem
-  min-height: 70px
+  padding: 6px
+  overflow: hidden
+  min-height: 140px
 
 .-intro a
   color: $-color30
