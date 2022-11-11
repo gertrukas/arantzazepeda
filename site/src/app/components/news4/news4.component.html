@@ -10,7 +10,7 @@
   <div *ngFor="let blog of blogs " class="-tarjeta" >
 
     <div>
-      <img [src]="blog._id | image: 'news'"  class=""  [alt]="blog.name">
+      <a [routerLink]="['/blog', blog.slug]"><img [src]="blog._id | image: 'news'"  [alt]="blog.name"></a>
     </div>
     <div>
       <p class="-titulo">{{ blog.name }}</p>
