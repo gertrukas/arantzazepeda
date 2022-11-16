@@ -65,9 +65,9 @@ export class NewComponent implements OnInit {
       this.metaService.updateTag({ property: 'og:description', content: this.blog.description});
 
       let ilink = 'https://backend.arantzazepeda.com/uploads/news/' + this.blog.image;
-      this.imglink = this.sanitizer.bypassSecurityTrustResourceUrl(ilink);
+      //this.imglink = this.sanitizer.bypassSecurityTrustResourceUrl(ilink);
 
-      this.metaService.updateTag({ property: 'og:image', content: this.imglink });
+      this.metaService.updateTag({ property: 'og:image', content: ilink });
 
       let link = 'https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Farantzazepeda.com%2Fblog%2F'
         + slug + '&width=450&layout=standard&action=like&size=small&share=true&height=35&appId=875029200167861';
