@@ -4,6 +4,7 @@ import { ImagePipe } from './image.pipe';
 import { ImageGalleryPipe } from './image-gallery.pipe';
 import { TruncatePipe } from './truncate.pipe';
 import { SafeHtmlPipe } from './keep-html.pipe';
+import { DomSanitizerPipe } from './dom-sanitizer.pipe';
 
 
 
@@ -13,7 +14,8 @@ import { SafeHtmlPipe } from './keep-html.pipe';
     ImagePipe,
     ImageGalleryPipe,
     TruncatePipe,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    DomSanitizerPipe
 
 
   ],
@@ -21,7 +23,8 @@ import { SafeHtmlPipe } from './keep-html.pipe';
     ImagePipe,
     ImageGalleryPipe,
     TruncatePipe,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    DomSanitizerPipe
   ],
   imports: [
     CommonModule

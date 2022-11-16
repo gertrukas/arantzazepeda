@@ -27,8 +27,14 @@ const routes: Routes = [
         loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule),
         title: "Arantza Zepeda / Contacto"
       },
+      {
+        path: 'aviso-de-privacidad',
+        loadChildren: () => import('./privacy/privacy.module').then(m => m.PrivacyModule),
+        title: "Arantza Zepeda / Aviso de privacidad"
+      },
     ]
   },
+
 ];
 
 @NgModule({
