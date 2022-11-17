@@ -13,7 +13,7 @@
   <div class="-col-2 p-1" >
 
     <div >
-      <img [src]="blog._id | image: 'news'"  [alt]="blog.name"  class="img-fluid" width="100%">
+      <img [src]="blog._id | image: 'news'"  [alt]="blog.name"  class="img-fluid" width="100%"  *ngIf="view">
     </div>
 
     <div>

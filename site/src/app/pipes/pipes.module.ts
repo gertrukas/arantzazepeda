@@ -16,8 +16,6 @@ import { DomSanitizerPipe } from './dom-sanitizer.pipe';
     TruncatePipe,
     SafeHtmlPipe,
     DomSanitizerPipe
-
-
   ],
   exports: [
     ImagePipe,

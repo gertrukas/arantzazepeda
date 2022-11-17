@@ -7,9 +7,6 @@ import {Title, Meta, DomSanitizer} from '@angular/platform-browser';
 import { environment } from "../../../../environments/environment";
 import { Blog } from "../../../interfaces/blog";
 
-
-
-
 @Component({
   selector: 'app-new',
   templateUrl: './new.component.html',
@@ -18,7 +15,7 @@ import { Blog } from "../../../interfaces/blog";
 
 export class NewComponent implements OnInit {
 
-  url = environment.apiUrl + '/news/';
+
 
   blog: Blog = {
     _id: '',
@@ -29,7 +26,7 @@ export class NewComponent implements OnInit {
     date:  new Date()
   };
 
-  linkface:any;
+  linkface: any = this.sanitizer.bypassSecurityTrustResourceUrl('');
   imglink: any;
   view: boolean = false;
 
@@ -40,9 +37,7 @@ export class NewComponent implements OnInit {
               private sanitizer: DomSanitizer,
               private titleService: Title,
               private metaService: Meta,
-
   ) {
-
        this.activateRouter.params.subscribe( params => {
           this.getData(params['blog']);
        });
@@ -56,25 +51,19 @@ export class NewComponent implements OnInit {
     this.service.getNewsD(slug).subscribe(response => {
       this.blog = response.blog;
 
-      console.log(this.blog);
-
       this.titleService.setTitle( 'Arantza Zepeda / comunicado / ' + this.blog.name );
 
-      this.metaService.updateTag({ property: 'og:url', content: environment.pageUrl + '/blog/' + this.blog.slug});
+      this.metaService.updateTag({ property: 'og:url', content: environment.pageUrl + 'blog/' + this.blog.slug});
       this.metaService.updateTag({ property: 'og:title', content: this.blog.name});
       this.metaService.updateTag({ property: 'og:description', content: this.blog.description});
 
       let ilink = 'https://backend.arantzazepeda.com/uploads/news/' + this.blog.image;
-      //this.imglink = this.sanitizer.bypassSecurityTrustResourceUrl(ilink);
 
       this.metaService.updateTag({ property: 'og:image', content: ilink });
 
       let link = 'https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Farantzazepeda.com%2Fblog%2F'
         + slug + '&width=450&layout=standard&action=like&size=small&share=true&height=35&appId=875029200167861';
       this.linkface = this.sanitizer.bypassSecurityTrustResourceUrl(link);
-
-
-
       this.view = true;
 
     }, error => {

@@ -5,9 +5,6 @@ import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
 import {ComponentsModule} from "../../../components/components.module";
 
-
-
-
 @NgModule({
   declarations: [
     MainComponent
