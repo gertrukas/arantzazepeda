@@ -83,7 +83,7 @@
                     </td>
                     <td (click)="editBlog(blog)">
                         <span class="p-column-title">description</span>
-                        <span [innerHTML]="blog.description"></span>
+                        <span [innerHTML]="blog.description | truncate: 90"></span>
                     </td>
                     <td>
                         <span class="p-column-title">status</span>
@@ -158,6 +158,14 @@
                   </span>
                 </div>
                 <div class="field col-12 mt-5 pt-3">
+                    <label for="intro">
+                        Intro
+                    </label>
+                    <span class="p-float-label">
+                      <p-editor [(ngModel)]="blog.intro" [style]="{'height':'320px'}" id="intro" name="intro"></p-editor>
+                  </span>
+                </div>
+                <div class="field col-12 mt-5 pt-3">
                     <label for="description">
                         Descripción
                     </label>
@@ -166,13 +174,11 @@
                   </span>
                 </div>
                 <div class="field col-12 mt-5 pt-3">
-                    <label for="intro">
-                        Intro
-                    </label>
                     <span class="p-float-label">
-                      <p-editor [(ngModel)]="blog.intro" [style]="{'height':'320px'}" id="intro" name="intro"></p-editor>
-                  </span>
-                </div>
+                      <p-dropdown inputId="type" id="type" name="type" [autoDisplayFirst]="false" [options]="types" [(ngModel)]="type" optionLabel="name"></p-dropdown>
+                      <label for="type">Tipo</label>
+                    </span>
+                  </div>
                 <div class="field col-12 mt-5 pt-3">
                     <span class="p-float-label">
                           <p-calendar id="date" name="date" [(ngModel)]="blog.date"  [showWeek]="true"></p-calendar>

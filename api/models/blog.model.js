@@ -16,6 +16,9 @@ const BlogSchema =  Schema({
     date: {
         type: Date,
     },
+    post_type : {
+        type: String,
+    },
     image: {
         type: String,
     },

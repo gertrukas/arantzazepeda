@@ -39,6 +39,8 @@ export class NewsComponent implements OnInit {
   selectedBlogs: Blog[];
   files: File[] = [];
   statuses: any[];
+  types:any[]=[];
+  type={};
   loading: boolean = true;
   image:any;
   imageInit:any;
@@ -57,6 +59,10 @@ export class NewsComponent implements OnInit {
               private cdr: ChangeDetectorRef,
               private service: BlogsService,
               private auth: AuthService) {
+    this.types = [
+                  {name: 'Post', code: 'post'},
+                  {name: 'Categoria', code: 'category'},
+                ]
     this.titleService.setTitle("Comunicados");
     const loadingSubscr = this.isLoading$
         .asObservable()
@@ -177,6 +183,7 @@ export class NewsComponent implements OnInit {
     params.append('Content-Type', 'multipart/form-data');
     params.append('name', form.value.name);
     params.append('description', form.value.description);
+    params.append('type_post', form.value.intro);
     params.append('intro', form.value.intro);
     params.append('date', form.value.date);
     for(let p=0;this.files.length>p;p++){
@@ -215,6 +222,7 @@ export class NewsComponent implements OnInit {
     params.append('Content-Type', 'multipart/form-data');
     params.append('name', form.value.name);
     params.append('description', form.value.description);
+    params.append('type_post', form.value.intro);
     params.append('intro', form.value.intro);
     for(let p=0;this.files.length>p;p++){
       params.append('image', this.files[p]);
